@@ -1,8 +1,8 @@
 function [result] = test
 
     result = [];
-    image2 = imread('minusVSplus15.jpg','jpg');
-    image = imread('plus.jpg','jpg');
+    image2 = imread('../img/minus.jpg','jpg');
+    image = imread('../img/plus.jpg','jpg');
     image=im2double(image);
     image2=im2double(image2);
     
@@ -21,13 +21,15 @@ function [result] = test
     %%noteOfInterest = imread('plus.jpg');
     %%noteOfInterest = rgb2gray(noteOfInterest);
     
-    C1 = normxcorr2(imageBY,imageBY);
-    max(C1(:))
+%     C1 = normxcorr2(imageBY,imageBY);
+%     max(C1(:))
+%     
+%    %% aDifferentNoteFromLibrary = imread('minusVSplus15.jpg');
+%     %%aDifferentNoteFromLibrary = rgb2gray(aDifferentNoteFromLibrary);
+%     C2 = normxcorr2(imageBY,image2BY);
+%     max(C2(:))
     
-   %% aDifferentNoteFromLibrary = imread('minusVSplus15.jpg');
-    %%aDifferentNoteFromLibrary = rgb2gray(aDifferentNoteFromLibrary);
-    C2 = normxcorr2(imageBY,image2BY);
-    max(C2(:))
-    
+    subplot(1,2,1);
     imshow(imageBY);
+    subplot(1,2,2);
     imshow(image2BY);
